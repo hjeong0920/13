@@ -1,22 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+struct Book {
+    int number;
+    char title[10];
+};
 
 int main(void){
-    char *pc = NULL;
-    int i = 0;
+    struct Book *p;
 
-    pc = (char*)malloc(100*sizeof(char));
-    if (pc == NULL){
+    p = malloc(2*sizeof(struct Book));
+    if(p==NULL){
         printf("error\n");
-        exit(1);
+        return 1;
     }
-
-    for(i=0;i<26;i++){
-        pc[i] = 'a'+i;
-    }
-    pc[i] = 0;
-    printf("%s\n", pc);
-    free(pc);
-
-    return 0;
 }
