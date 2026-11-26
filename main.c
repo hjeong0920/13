@@ -4,7 +4,7 @@
 
 struct Book {
     int number;
-    char title[10];
+    char title[20];
 };
 
 int main(void){
@@ -15,4 +15,17 @@ int main(void){
         printf("error\n");
         return 1;
     }
+
+    p->number = 1;
+    strcpy(p->title, "C Programming");
+
+    (p+1)->number = 2;
+    strcpy((p+1)->title, "Electronics");
+
+    printf("%d %s\n", p->number, p->title);
+    printf("%d %s\n", (p+1)->number, (p+1)->title);
+    free(p);
+    return 0;
 }
+
+
